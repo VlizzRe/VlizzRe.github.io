@@ -3,61 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primer Sitio con GitHub Pages</title>
+    <title>Motor a Pasos Bipolar: Guía Completa</title>
     <style>
-        /* CSS básico para un poco de estilo */
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
             color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
         .container {
-            background: white;
+            max-width: 900px;
+            margin: 30px auto;
             padding: 20px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #0366d6;
+        section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
         }
-        .download-box {
-            border: 2px dashed #0366d6;
-            padding: 15px;
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #34495e;
+            font-size: 1.4em;
             margin-top: 25px;
-            display: inline-block;
         }
-        .download-box a {
-            text-decoration: none;
-            color: white;
-            background-color: #28a745;
-            padding: 10px 20px;
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
             border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .download-box a:hover {
-            background-color: #218838;
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>¡Bienvenido a mi Sitio Gratuito en GitHub Pages!</h1>
-        <p>Esta página fue creada siguiendo los pasos de la guía y está alojada 100% gratis.</p>
-        <p>Aquí puedes ver mi portafolio de proyectos o mi información de contacto.</p>
 
-        <h2>Ejemplo de Descarga</h2>
-        <p>Haz clic en el botón para descargar un archivo de ejemplo. ¡Recuerda subir el archivo a tu repositorio!</p>
-        
-        <div class="download-box">
-            <a href="documento.pdf" download="Mi_Archivo_Descargado.pdf">
-                Descargar Archivo Importante
-            </a>
-        </div>
+    <div class="header">
+        <h1>Motor a Pasos Bipolar</h1>
+        <p>Tu guía completa para entender y usar motores a pasos bipolares</p>
     </div>
+
+    <div class="container">
+        <section>
+            <h2>¿Qué es un Motor a Pasos Bipolar?</h2>
+            <p>
+                Un motor a pasos (o <i>stepper motor</i>) es un tipo de motor DC sin escobillas que divide una rotación completa en un número de pasos discretos. La posición del motor puede ser controlada con precisión sin ningún mecanismo de retroalimentación, siempre y cuando el motor esté dimensionado correctamente para la aplicación.
+            </p>
+            <p>
+                Los motores a pasos bipolares se distinguen por tener **dos bobinas** (o dos pares de bobinas). A diferencia de los motores unipolares que tienen una toma central en cada bobina, los bipolares requieren que la corriente fluya en ambas direcciones a través de sus bobinas, lo que significa que necesitan un controlador de puente H.
+            </p>
+            <div class="image-container">
+                <img src="motor_pasos_bipolar.jpg" alt="Diagrama de un motor a pasos bipolar" title="Ejemplo de motor a pasos bipolar">
+                <p><i>Un motor a pasos bipolar típico y su diagrama de conexiones.</i></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Características Principales</h2>
+            <ul>
+                <li>**Mayor Torque:** Generalmente, los motores bipolares ofrecen un mayor torque para un tamaño dado en comparación con sus contrapartes unipolares, debido a un uso más eficiente de las bobinas.</li>
+                <li>**Cuatro Cables:** Un motor a pasos bipolar suele tener 4 cables de conexión (dos para cada bobina).</li>
+                <li>**Control Más Complejo:** Requieren un controlador de puente H (como un L298N, DRV8825, A4988) para invertir la dirección de la corriente en las bobinas.</li>
+                <li>**Precisión:** Son excelentes para aplicaciones que requieren movimientos precisos y repetibles, como impresoras 3D, CNC, robótica y actuadores de posicionamiento.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>¿Cómo Funciona?</h2>
+            <p>
+                El movimiento de un motor a pasos bipolar se logra energizando secuencialmente sus dos bobinas en una secuencia específica para crear un campo magnético giratorio.
+            </p>
+            <h3>Secuencia de Pasos (Ejemplo de Paso Completo)</h3>
+            <p>Asumiendo dos bobinas (A y B) y un controlador de puente H que puede energizar las bobinas en polaridad positiva (+) o negativa (-):</p>
+            <ol>
+                <li>**Paso 1:** Bobina A (+), Bobina B (apagada)</li>
+                <li>**Paso 2:** Bobina A (+), Bobina B (+)</li>
+                <li>**Paso 3:** Bobina A (apagada), Bobina B (+)</li>
+                <li>**Paso 4:** Bobina A (-), Bobina B (+)</li>
+                <li>**Paso 5:** Bobina A (-), Bobina B (apagada)</li>
+                <li>... y así sucesivamente, cada paso mueve el rotor una fracción de vuelta.</li>
+            </ol>
+            <p>Existen diferentes modos de paso (paso completo, medio paso, micro paso) que ofrecen diferentes niveles de suavidad y precisión en el movimiento.</p>
+        </section>
+
+        <section>
+            <h2>Conexión y Control con Arduino (Ejemplo Básico)</h2>
+            <p>Para controlar un motor a pasos bipolar con Arduino, necesitarás un controlador de motor. El **DRV8825** o el **A4988** son muy populares por su facilidad de uso.</p>
+            <p><strong>Conexión Básica:</strong></p>
+            <ul>
+                <li>**Motor a Driver:** Conecta los dos pares de bobinas del motor a las salidas A y B del driver (ej. 1A/1B y 2A/2B para un L298N; o A1/A2 y B1/B2 para DRV8825).</li>
+                <li>**Driver a Arduino:**
+                    <ul>
+                        <li>Pin <code>STEP</code> del driver a un pin digital de Arduino (para enviar pulsos de paso).</li>
+                        <li>Pin <code>DIR</code> del driver a otro pin digital de Arduino (para controlar la dirección).</li>
+                        <li><code>ENABLE</code> del driver (si existe) a <code>HIGH</code> o a GND según el driver para habilitarlo.</li>
+                        <li>Alimentación del motor a la entrada de alimentación del driver.</li>
+                        <li>Arduino y driver deben compartir la misma GND.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Código Arduino (Pseudocódigo):</strong></p>
+            <pre><code>
+#include &lt;Stepper.h&gt; // o la librería para tu driver (ej. AccelStepper)
+
+const int stepsPerRevolution = 200; // Pasos por revolución de tu motor
+const int dirPin = 2; // Pin de dirección del driver
+const int stepPin = 3; // Pin de paso del driver
+
+void setup() {
+  pinMode(dirPin, OUTPUT);
+  pinMode(stepPin, OUTPUT);
+  // Posible configuración de microstepping si usas DRV8825/A4988
+}
+
+void loop() {
+  // Mover en una dirección
+  digitalWrite(dirPin, HIGH); // O LOW, dependiendo de la dirección
+  for(int x = 0; x < stepsPerRevolution; x++) {
+    digitalWrite(stepPin, HIGH);
+    delayMicroseconds(500); // Velocidad del paso
+    digitalWrite(stepPin, LOW);
+    delayMicroseconds(500);
+  }
+  delay(1000); // Esperar un segundo
+
+  // Mover en la dirección opuesta
+  digitalWrite(dirPin, LOW);
+  for(int x = 0; x < stepsPerRevolution; x++) {
+    digitalWrite(stepPin, HIGH);
+    delayMicroseconds(500);
+    digitalWrite(stepPin, LOW);
+    delayMicroseconds(500);
+  }
+  delay(1000);
+}
+            </code></pre>
+        </section>
+        
+        <section>
+            <h2>Recursos Adicionales</h2>
+            <ul>
+                <li><a href="https://www.arduino.cc/en/Reference/Stepper" target="_blank">Documentación de la librería Stepper de Arduino</a></li>
+                <li><a href="https://lastminuteengineers.com/a4988-stepper-motor-driver-arduino-tutorial/" target="_blank">Tutorial A4988 con Arduino (en inglés)</a></li>
+                <li><a href="https://tutorial.cytron.io/2020/03/11/beginner-guide-drv8825-stepper-motor-driver-with-arduino/" target="_blank">Tutorial DRV8825 con Arduino (en inglés)</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 Guía de Motores a Pasos Bipolares. Todos los derechos reservados.</p>
+    </div>
+
 </body>
 </html>
